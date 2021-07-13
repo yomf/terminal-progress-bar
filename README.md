@@ -1,7 +1,9 @@
 
 # A simple terminal progress bar
 
-Made with a single c++ class, which you always wanted. Avoids redundant update by utilising [ANSI escape codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#file-ansi-md).
+Made with a single c++ class, which you always wanted.
+Resizable bar.
+Avoids redundant update by utilising [ANSI escape codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#file-ansi-md).
 
 ## Usage
 
@@ -18,6 +20,31 @@ int main()
     }
 }
 ```
+## Example
+
+```cpp
+int main()
+{
+    Bar b(20);
+    for(int i = 1; i <= 100000; i++)
+    {
+        int p = (float)i / 100000 * 100;
+        b.update(p);
+        if (p > 10)
+            b.finish();
+    }
+    b.finish();
+
+    Bar a(100);
+    for (int i = 1; i <= 100000; i++)
+    {
+        int p = (float)i / 100000 * 100;
+        a.update(p);
+    }
+}
+```
+
+
 ## Don'ts
 Do not print anything before calling the finish or until the bar object goes out of scope.
 ## Contributions
