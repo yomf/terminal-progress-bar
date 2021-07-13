@@ -57,4 +57,4 @@ Do not print anything before calling the finish or until the bar object goes out
 You can use the above mentioned ANSI escape codes to change the color, font style, etc..
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/YoMF/shared-assets/blob/d87d8748a96b587e84eaa4824520721698065e46/LICENSE)
