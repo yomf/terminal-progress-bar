@@ -1,3 +1,5 @@
+/* Created by YoMF */
+
 #include <iostream>
 #include <cstdio>
 
@@ -36,15 +38,12 @@ public:
 
         std::cout << std::unitbuf; // immediate flush without newline.
         set_format();
+        
         std::cout << "\nProgress:\n";
         std::cout << "[";
-
         move_cursor(bpos + width);
-
         std::cout << "] ";
-
         npos = (bpos + width + 2);
-
         std::cout << "0%";
     }
 
@@ -53,27 +52,22 @@ public:
         if(killed) return;
 
         per = (per > 100) ? 100 : ((per < 0) ? 0 : per);
-
         int p = ((float)per)*(width)/100;
         p = (p - (bpos-2));
 
         move_cursor(bpos);
-
         while(p--)
         {
             std::cout << "=";
             bpos++;
         }
-
         move_cursor(npos);
-
         std::cout << per << "%";
     }
 
     void finish()
     {
         if(killed) return;
-
         killed = true;
         std::cout << "\n";
         std::cout << std::endl;
@@ -90,7 +84,6 @@ public:
 int main()
 {
     Bar b(20);
-
     for(int i = 1; i <= 100000; i++)
     {
         int p = (float)i / 100000 * 100;
@@ -102,11 +95,9 @@ int main()
     b.finish();
 
     Bar a(100);
-
     for (int i = 1; i <= 100000; i++)
     {
         int p = (float)i / 100000 * 100;
         a.update(p);
     }
-
 }
