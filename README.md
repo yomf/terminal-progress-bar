@@ -3,7 +3,8 @@
 
 Made with a single c++ class, which you always wanted.
 Resizable bar.
-Avoids redundant update by utilising [ANSI escape codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#file-ansi-md).
+Avoids redundant update by utilising [ANSI escape codes](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#file-ansi-md).  
+Instant flush without a newline.
 
 ## Usage
 
