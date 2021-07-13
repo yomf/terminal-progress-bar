@@ -16,7 +16,6 @@ int main()
     {
         int p = (float)i / 1000000 * 100;
         b.update(p);            // increments the bar as per the percentage value passed(0-100).
-        if(p > 10) b.finish();  // won't be updated once this is executed.
     }
 }
 ```
@@ -33,7 +32,7 @@ int main()
         if (p > 10)
             b.finish();
     }
-    b.finish();
+    b.finish(); // don't forget this before printing something else.
 
     Bar a(100);
     for (int i = 1; i <= 100000; i++)
@@ -43,10 +42,17 @@ int main()
     }
 }
 ```
-
+## Output
+![output screenshot](https://github.com/YoMF/image-assets/blob/0925f3d2286a2de7a455678b1d31579041a3591d/progress-bar-example.png)
 
 ## Don'ts
 Do not print anything before calling the finish or until the bar object goes out of scope.
+
+## Test Configurations:
+- system :   Ubuntu 20.10 (64bit)  
+- compiler:  g++  
+- flags:     -std=c++20 -o3  
+
 ## Contributions
 You can use the above mentioned ANSI escape codes to change the color, font style, etc..
 
